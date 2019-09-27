@@ -13,13 +13,17 @@ public class TemplateCCApp extends CCApp {
 	}
 
 	@Override
-	public void begin() {
+	public void begin() {for (int i = 0; i < NUM_POINTS; ++i) {
+			xPoints[i] = getRandom().nextInt(WIDTH);
+			yPoints[i] = getRandom().nextInt(HEIGHT);
 		// TODO Initialize your application here.
 
 	}
 
 	@Override
-	public void update() {
+	public void update() {for (int i = 0; i < NUM_POINTS; ++i) {
+			xPoints[i] += getRandom().nextInt(5) - 2;
+			yPoints[i] += getRandom().nextInt(5) - 2;
 		// TODO Update your application here.
 
 	}
@@ -32,8 +36,6 @@ public class TemplateCCApp extends CCApp {
 		getGfx().fillRect(0, 0, WIDTH, HEIGHT);
 		int x = getRandom().nextInt(WIDTH);
 		int y = getRandom().nextInt(HEIGHT);
-		getGfx().setColor(Color.GREEN);
-		getGfx().fillOval(x, y, 10, 10);
 	}
 
 	public static void main(String[] args) {
